@@ -41,7 +41,7 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ open, setOpen }) => {
   ) => {
     event.preventDefault();
     const params = {
-      redirect_to: 'http://127.0.0.1:5173',
+      redirect_to: import.meta.env.VITE_BASE_URL,
     };
     dispatch(createRequestToken(params));
   };
