@@ -28,7 +28,7 @@ const Header: React.FC = () => {
       localStorage.removeItem('request_token');
       localStorage.removeItem('access_token');
       localStorage.removeItem('movie_rating_list');
-      navigate(0);
+      navigate('/');
     }
   };
 
