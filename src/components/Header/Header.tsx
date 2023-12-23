@@ -61,10 +61,10 @@ const Header: React.FC = () => {
         </div>
         <ul className="flex space-x-10 font-medium">
           <li onClick={handlePopUpLogin}>
-            <Link to={accessToken ? '/favorite' : ''}>Favorite</Link>
+            <Link to={accessToken ? '/favorite' : '/'}>Favorite</Link>
           </li>
           <li onClick={handlePopUpLogin}>
-            <Link to={accessToken ? '/watchlist' : ''}>Watchlist</Link>
+            <Link to={accessToken ? '/watchlist' : '/'}>Watchlist</Link>
           </li>
           {accessToken && (
             <li onClick={handleLogout} className="cursor-pointer">
