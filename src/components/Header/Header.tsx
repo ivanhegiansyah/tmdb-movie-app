@@ -1,10 +1,16 @@
-import { Link, createSearchParams, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  createSearchParams,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import LoginPopup from '../LoginPopup/LoginPopup';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [searchInput, setSearchInput] = useState<string>('');
 
@@ -61,10 +67,14 @@ const Header: React.FC = () => {
         </div>
         <ul className="flex space-x-10 font-medium">
           <li onClick={handlePopUpLogin}>
-            <Link to={accessToken ? '/favorite' : '/'}>Favorite</Link>
+            <Link to={accessToken ? '/favorite' : location.pathname}>
+              Favorite
+            </Link>
           </li>
           <li onClick={handlePopUpLogin}>
-            <Link to={accessToken ? '/watchlist' : '/'}>Watchlist</Link>
+            <Link to={accessToken ? '/watchlist' : location.pathname}>
+              Watchlist
+            </Link>
           </li>
           {accessToken && (
             <li onClick={handleLogout} className="cursor-pointer">
